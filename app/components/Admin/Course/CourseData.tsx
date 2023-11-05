@@ -47,7 +47,7 @@ const CourseData:FC<Props> = ({benefits, setBenefits, prerequisites, setPrerequi
                 What are the benefits for students in this course?
             </label>
             <br />
-            {benefits.map((benefit: any, index:number) => (
+            {benefits?.map((benefit: any, index:number) => (
                 <input 
                     type='text'
                     key={index}

@@ -1,15 +1,14 @@
 "use client";
-import React, { FC, useState } from 'react'
-import Heading from '../utils/Heading'
-import { useSelector } from 'react-redux';
-import AdminSidebar from '../components/Admin/AdminSidebar';
-import AdminProtected from '../hooks/adminProtected';
-import DashboardHero from '../components/Admin/DashboardHero';
+import AdminSidebar from '@/app/components/Admin/AdminSidebar';
+import DashboardHero from '@/app/components/Admin/DashboardHero';
+import AllInvoices from '@/app/components/Admin/Order/AllInvoices';
+import AdminProtected from '@/app/hooks/adminProtected';
+import Heading from '@/app/utils/Heading';
+import React, { FC } from 'react'
 
 type Props = {}
 
-const page:FC<Props> = (props) => {
-    const {user} = useSelector((state:any) => state.auth);
+const page:FC<Props> = () => {
   return (
     <div>
         <AdminProtected>
@@ -23,8 +22,9 @@ const page:FC<Props> = (props) => {
                 <AdminSidebar />
             </div>
 
-            <div className='w-[85%]'>
-                <DashboardHero isDashboard={true} />
+            <div className='w-[85%] px-6'>
+                <DashboardHero />
+                <AllInvoices isDashboard={false} />
             </div>
         </div>
         </AdminProtected>

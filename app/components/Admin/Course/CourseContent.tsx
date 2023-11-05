@@ -58,6 +58,7 @@ const CourseContent:FC<Props> = ({courseContentData, setCourseContentData, activ
                 title: "",
                 description: "",
                 videoSection: newVideoSection,
+                videoLength: "",
                 links: [{title: "", url: ""}],
             };
             setCourseContentData([...courseContentData, newContent]);
@@ -69,6 +70,7 @@ const CourseContent:FC<Props> = ({courseContentData, setCourseContentData, activ
             courseContentData[courseContentData.length - 1]?.title === "" ||
             courseContentData[courseContentData.length - 1]?.description === "" ||
             courseContentData[courseContentData.length - 1]?.videoUrl === "" ||
+            courseContentData[courseContentData.length - 1]?.videoLength === "" ||
             courseContentData[courseContentData.length - 1]?.links[0].title === "" ||
             courseContentData[courseContentData.length - 1]?.links[0].url === ""
         ) {
@@ -93,6 +95,7 @@ const CourseContent:FC<Props> = ({courseContentData, setCourseContentData, activ
             courseContentData[courseContentData.length - 1].title === "" ||
             courseContentData[courseContentData.length - 1].description === "" ||
             courseContentData[courseContentData.length - 1].videoUrl === "" ||
+            courseContentData[courseContentData.length - 1].videoLength === "" ||
             courseContentData[courseContentData.length - 1].links[0].title === "" ||
             courseContentData[courseContentData.length - 1].links[0].url === ""
         ) {
@@ -188,6 +191,22 @@ const CourseContent:FC<Props> = ({courseContentData, setCourseContentData, activ
                                     onChange={e => {
                                         const updatedData = [...courseContentData];
                                         updatedData[index].videoUrl = e.target.value;
+                                        setCourseContentData(updatedData)
+                                    }}
+                                />
+                            </div>
+
+                            <div className='mb-3'>
+                                <label className={styles.label}>Video Length (in minutes)</label>
+                                <input 
+                                    type='number'
+                                    placeholder='120'
+                                    className={styles.input}
+                                    value={item.videoLength}
+                                    name='videoLength'
+                                    onChange={e => {
+                                        const updatedData = [...courseContentData];
+                                        updatedData[index].videoLength = e.target.value;
                                         setCourseContentData(updatedData)
                                     }}
                                 />

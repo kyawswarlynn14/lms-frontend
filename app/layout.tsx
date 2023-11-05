@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${josefin.variable} bg-no-repeat !bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-black duration-100`}>
+      <body className={`${poppins.variable} ${josefin.variable} bg-no-repeat !bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-black duration-100 dark:text-white`}>
         <Providers>
           <SessionProvider>
             <ThemeProvider attribute='class' defaultTheme='system' enableSystem>

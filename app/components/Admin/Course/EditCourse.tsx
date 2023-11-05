@@ -22,6 +22,7 @@ const EditCourse:FC<Props> = ({id}) => {
         setCourseInfo({
             name: editCourseData?.name,
             description: editCourseData?.description,
+            category: editCourseData?.category,
             price: editCourseData?.price,
             estimatedPrice: editCourseData?.estimatedPrice,
             tags: editCourseData?.tags,
@@ -52,6 +53,7 @@ const EditCourse:FC<Props> = ({id}) => {
     const [courseInfo, setCourseInfo] = useState({
         name: "",
         description: "",
+        category: "",
         price: "",
         estimatedPrice: "",
         tags: "",
@@ -67,6 +69,7 @@ const EditCourse:FC<Props> = ({id}) => {
             title: "",
             description: "",
             videoSection: "Untitled Section",
+            videoLength: "",
             links: [
                 {
                     title: "",
@@ -88,6 +91,7 @@ const EditCourse:FC<Props> = ({id}) => {
             title: courseContent.title,
             description: courseContent.description,
             videoSection: courseContent.videoSection,
+            videoLength: courseContent.videoLength,
             links: courseContent.links.map(link => ({
                 title: link.title,
                 url: link.url
@@ -98,6 +102,7 @@ const EditCourse:FC<Props> = ({id}) => {
         const data = {
             name: courseInfo.name,
             description: courseInfo.description,
+            category: courseInfo.category,
             price: courseInfo.price,
             estimatedPrice: courseInfo.estimatedPrice,
             tags: courseInfo.tags,
